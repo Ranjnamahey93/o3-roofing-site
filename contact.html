@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — O3 Roofing</title>
+<link rel="icon" href="images/o3-logo.png">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site">
+  <div class="nav">
+    <a class="brand" href="index.html"><img src="images/o3-logo.png" alt="O3 Roofing logo">Ozone Roofing LLC</a>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html" class="active">Contact</a>
+    </nav>
+    <a class="btn btn-primary" href="contact.html">Free Inspection</a>
+  </div>
+</header>
+
+<section class="page-hero hero">
+  <div class="hero-inner wrap" style="padding-left:0;padding-right:0;">
+    <div class="eyebrow">Contact</div>
+    <h1>Let's take a look at your roof.</h1>
+    <p class="lead">Fill in a few details or just call — either way, a real person calls you back within one business day, not a call center.</p>
+  </div>
+</section>
+
+<div class="ridge-strip">
+  <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+  <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+</div>
+
+<section>
+  <div class="contact-wrap">
+    <div>
+      <div class="info-card">
+        <div class="info-row"><div class="lbl">Phone</div><div class="val">(253) 350-0341</div></div>
+        <div class="info-row"><div class="lbl">Email</div><div class="val">Ozoneroofing25@gmail.com</div></div>
+        <div class="info-row"><div class="lbl">Hours</div><div class="val">Mon–Sat, 7am–6pm</div></div>
+        <div class="info-row"><div class="lbl">Storm response</div><div class="val">Under 48 hours, in-area</div></div>
+      </div>
+      <div class="info-card">
+        <div class="eyebrow" style="margin-bottom:6px;">Service area</div>
+        <h3 style="margin-bottom:2px;">Where we work</h3>
+        <ul class="area-list">
+          <li>King county</li>
+          <li>Pierce County</li>
+          <li>Snohomish County</li>
+          
+        </ul>
+      </div>
+    </div>
+
+    <form class="contact-form" onsubmit="return false;">
+      <div class="form-row">
+        <div class="field">
+          <label for="name">Name</label>
+          <input id="name" type="text" placeholder="Jordan Alvarez">
+        </div>
+        <div class="field">
+          <label for="phone">Phone</label>
+          <input id="phone" type="tel" placeholder="(555) 000-0000">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" type="email" placeholder="you@email.com">
+        </div>
+        <div class="field">
+          <label for="address">Property address</label>
+          <input id="address" type="text" placeholder="123 Maple St, Your City">
+        </div>
+      </div>
+
+      <label style="display:block;font-size:11px;text-transform:uppercase;letter-spacing:0.5px;color:var(--muted);margin-bottom:10px;">What do you need?</label>
+      <div class="chip-group">
+        <div class="chip active">Free inspection</div>
+        <div class="chip">New roof</div>
+        <div class="chip">Storm damage</div>
+        <div class="chip">Full replacement</div>
+        <div class="chip">Repair</div>
+        <div class="chip">Not sure yet</div>
+      </div>
+
+      <div class="field" style="margin-bottom:20px;">
+        <label for="message">Tell us more</label>
+        <textarea id="message" placeholder="A leak near the chimney, missing shingles after last week's wind, curious about replacement cost, etc."></textarea>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Send request</button>
+    </form>
+  </div>
+</section>
+
+<footer class="site">
+  <div class="footer-inner">
+    <span>O3 Roofing. Licensed, insured &amp; bonded.</span>
+    <nav>
+      <a href="services.html">Services</a>
+      <a href="about.html">About</a>
+      <a href="index.html">Home</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+document.querySelectorAll('.chip').forEach(function(chip){
+  chip.addEventListener('click', function(){
+    document.querySelectorAll('.chip').forEach(function(c){ c.classList.remove('active'); });
+    chip.classList.add('active');
+  });
+});
+</script>
+
+</body>
+</html>
