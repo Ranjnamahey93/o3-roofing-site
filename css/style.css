@@ -104,6 +104,18 @@ header.site {
 .nav-links a { margin-left: 32px; }
 .nav-links a:first-child { margin-left: 0; }
 
+.menu-toggle {
+  display: none;
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--white);
+  font-size: 20px;
+  line-height: 1;
+  padding: 8px 12px;
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+
 .nav-links a { padding-bottom: 4px; border-bottom: 2px solid transparent; transition: color .15s, border-color .15s; }
 .nav-links a:hover, .nav-links a.active { color: var(--white); border-color: var(--blue); }
 
@@ -365,12 +377,87 @@ form.contact-form { background: var(--card); border: 1px solid var(--border); bo
 .chip.active { background: var(--blue); border-color: var(--blue); color: #0c1315; font-weight: 700; }
 
 /* ---------- responsive ---------- */
+
+/* Tablet and down: collapse nav into a hamburger dropdown, stack grids */
 @media (max-width: 900px) {
-  .nav-links { display: none; }
+  .nav { padding: 14px 20px; }
+  .wrap { padding: 0 20px; }
+
+  .menu-toggle { display: inline-block; }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+    padding: 8px 20px 16px;
+    gap: 0;
+  }
+  .nav-links.open { display: flex; }
+  .nav-links a {
+    margin-left: 0;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border);
+    border-bottom-width: 1px;
+    width: 100%;
+  }
+  .nav-links a:last-child { border-bottom: none; }
+
+  header.site { position: sticky; }
+  .nav { position: relative; }
+
+  .hero, .page-hero { padding: 56px 20px 40px; }
+  section { padding: 44px 20px; }
+
   .badges, .grid-3, .steps, .two-col, .people, .values-grid, .contact-wrap, .form-row, .area-list {
     grid-template-columns: 1fr !important;
   }
   .grid-3 .card { border-right: none !important; border-top: 1px solid var(--border) !important; }
-  h1 { font-size: 32px; }
-  .hero h1 { font-size: 34px; }
+  .badges { gap: 20px; padding: 32px 20px; }
+
+  h1 { font-size: 30px; }
+  h2 { font-size: 26px; }
+  .hero h1 { font-size: 32px; }
+  .hero p.lead { font-size: 15px; }
+
+  .hero-actions { flex-direction: column; align-items: stretch; }
+  .hero-actions a { margin-left: 0; margin-right: 0; margin-bottom: 12px; text-align: center; }
+  .hero-actions a:last-child { margin-bottom: 0; }
+
+  .testimonial { padding: 56px 20px; }
+  .testimonial blockquote { font-size: 18px; }
+
+  .closing { padding: 60px 20px; }
+
+  .footer-inner { flex-direction: column; gap: 14px; text-align: center; }
+  .footer-inner nav { flex-wrap: wrap; justify-content: center; }
+}
+
+/* Phones: tighter type, full-width buttons, simplified spacing */
+@media (max-width: 520px) {
+  .brand span, .brand { font-size: 15px; }
+  .brand img { width: 32px; height: 32px; }
+
+  .btn { width: 100%; text-align: center; }
+  .nav .btn-primary { display: none; } /* keep header tidy; CTA still in hero + closing sections */
+
+  .hero h1 { font-size: 27px; }
+  h2 { font-size: 22px; }
+  .eyebrow { font-size: 11px; }
+
+  .card { padding: 24px 20px; }
+  .values-grid .card { padding: 20px; }
+
+  .stat-panel { padding: 20px; }
+  .stat-row .num { font-size: 17px; }
+
+  .chip-group { gap: 8px; }
+  .chip { padding: 7px 12px; font-size: 11px; }
+
+  form.contact-form { padding: 20px; }
+  .info-card { padding: 20px; }
 }
